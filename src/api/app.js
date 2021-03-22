@@ -15,8 +15,8 @@ app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
 
 app.get('/', (req, res) => {
-  app.use(express.static('../../build')));
-  app.use(express.static('../../build', express.static('static')));  //required for images and fonts
+  app.use(express.static('../../build'));
+  app.use(express.static('../.. /build', express.static('static')));  //required for images and fonts
   res.sendFile("../../build/index.html");   
 });
 
