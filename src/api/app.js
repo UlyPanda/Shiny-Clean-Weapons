@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const weaponsRouter = require('./routes/weapons');
-const { logger } = require('./middleware')
+const { logger } = require('./middleware/index')
 
 const app = express();
 const port = process.env.PORT || 4001;
@@ -15,9 +15,9 @@ app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
 
 app.get('/', (req, res) => {
-  app.use(express.static(__dirname+ "/build/static"));            //required for css and js
-  app.use(express.static('./build', express.static('static')));  //required for images and fonts
-  res.sendFile(__dirname + "/build/index.html");   
+  app.use(express.static('../../build')));
+  app.use(express.static('../../build', express.static('static')));  //required for images and fonts
+  res.sendFile("../../build/index.html");   
 });
 
 app.listen(port, () => {
