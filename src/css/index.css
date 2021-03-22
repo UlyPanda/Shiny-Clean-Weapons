@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: 400;
+}
+body {
+  background-color: purple;
+}
+.cards {
+  max-width: 25%;
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+@import url('components.css');
+@import url('elements.css');
