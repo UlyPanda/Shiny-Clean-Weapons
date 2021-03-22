@@ -9,7 +9,6 @@ const app = express();
 const port = process.env.PORT || 4001;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
