@@ -15,8 +15,10 @@ app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the shiny-clean-weapons server!')
-})
+  app.use(express.static(__dirname+ "/build/static"));            //required for css and js
+  app.use(express.static('./build', express.static('static')));  //required for images and fonts
+  res.sendFile(__dirname + "/build/index.html");   
+});
 
 app.listen(port, () => {
  console.log(`Web server is listening on port ${port}!`);
