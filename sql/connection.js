@@ -1,5 +1,6 @@
 const mysql = require('mysql')
 const dotenv = require('dotenv');
+dotenv.config()
 
 
 class Connection {
@@ -14,6 +15,8 @@ class Connection {
         password: process.env.DB_PASSWORD,
         database: process.env.DATABASE
       }
+
+      this.pool = mysql.createPool(config)
 
       return this.pool
     }

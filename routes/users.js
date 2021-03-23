@@ -5,11 +5,11 @@ const router = express.Router()
 
 router.get('/', usersController.getAllUsers)
 
-router.get('/:id', usersController.getUserById)
+router.get('/:username', usersController.getUserById)
 
-router.post('/', authenticate, usersController.createUser)
+router.post('/signup/:username', usersController.createUser)
 
-router.put('/:id', authenticate, usersController.updateUserById)
+router.put('/:username', usersController.updateUserById)
 
 router.delete('/:first_name', authenticate, usersController.deleteUserByFirstName)
 

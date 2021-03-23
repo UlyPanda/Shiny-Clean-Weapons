@@ -6,6 +6,7 @@ const weaponsRouter = require('./routes/weapons');
 const { logger } = require('./middleware/index')
 
 const app = express();
+require('dotenv').config();
 const port = process.env.PORT || 4001;
 
 app.use(bodyParser.json());
@@ -15,9 +16,7 @@ app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
 
 app.get('/', (req, res) => {
-  app.use(express.static('../../build'));
-  app.use(express.static('../.. /build', express.static('static')));  //required for images and fonts
-  res.sendFile("../../build/index.html");   
+  res.send('Shiny clean weapons server!');   
 });
 
 app.listen(port, () => {

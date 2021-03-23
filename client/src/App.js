@@ -1,9 +1,9 @@
 import Nav from './components/nav';
-import Router from '../Router'
+import Router from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import '../css/index.css';
+import './css/index.css';
 
 function App() {
   return (
