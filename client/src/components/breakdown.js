@@ -1,5 +1,5 @@
 import React from 'react';
-import handGunPic from '../../images/handGunPic.jpg';
+import handGunPic from '../images/handGunPic.jpg';
 import { Container, Card, CardActionArea, CardMedia,
 CardContent, Typography} from '@material-ui/core'
 

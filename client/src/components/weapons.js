@@ -1,12 +1,10 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import Grid from '@material-ui/core/Grid';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
-import handGunPic from '../../images/handGunPic.jpg';
+import handGunPic from '../images/handGunPic.jpg';
 import { Link } from 'react-router-dom'
 
 

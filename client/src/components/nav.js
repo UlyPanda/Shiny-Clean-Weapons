@@ -2,7 +2,6 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, 
     Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import AppLogo from '../../images/1911 Logo.png'
 
 const Navigation = () => {
     return (

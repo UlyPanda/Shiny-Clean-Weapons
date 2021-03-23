@@ -18,7 +18,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 // app.use(express.static("/build"))  
 
 app.get('/', (req, res) => {
-  res.send('Shiny clean weapons server!');   
+  app.use(express.static(__dirname+"/client/build/static"));
+  app.use(express.static('./client/build', express.static('static')));
+  res.sendFile(__dirname + "/client/build/index.html");  
 });
 
 app.listen(port, () => {
