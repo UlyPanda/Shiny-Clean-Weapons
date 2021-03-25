@@ -24,3 +24,8 @@ padding-right: 70%;
     margin-left: 4%;
     height: 100%;
   }
+
+.bd-headline {
+    font-size: x-large;
+    color: whitesmoke
+}

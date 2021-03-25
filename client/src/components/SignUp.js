@@ -17,17 +17,17 @@ const SignUp = (props) => {
       setPassword(e.target.value);
     }
   
-    const signUp = (e) => {
+    const signup = (e) => {
       e.preventDefault();
       const newUser = {username, password};
-      props.signup(newUser);
+      props.signUp(newUser);
       history.push("/login");
     }
 
     return(
         <div>
       <Container className="form-container" maxWidth="sm">
-        <form className="login-form" onSubmit={signUp}>
+        <form className="login-form" onSubmit={signup}>
           <TextField 
             required
             label="Username"

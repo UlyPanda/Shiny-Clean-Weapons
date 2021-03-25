@@ -12,7 +12,11 @@ import { Link } from 'react-router-dom'
  class Weapons extends React.Component {
      constructor(props){
          super(props)
+         this.state = {
+             weapons: this.props.weapons
+         }
      }
+     
 
      componentDidMount() {
         this.props.getAllWeapons()
