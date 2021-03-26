@@ -1,25 +1,25 @@
 import { combineReducers } from 'redux';
 
 const weapons = (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
         case "GET_WEAPONS":
-            return action.value
+            return action.value;
         case "GET_WEAPON":
-            return action.value
+            return action.value;
         default: 
             return state;
     }
 }
 
 const users = (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
         case "SIGN_UP":
-            return action.value
+            return action.value;
         case "LOG_IN":
-            return action.value
+            return action.value;
         default:
-            return state
+            return state;
     }
-};
+}
 
 export default combineReducers({ users, weapons });

@@ -11,7 +11,7 @@ class Connection {
         connectionLimit: 100,
         host: 'den1.mysql3.gear.host',
         user: 'firearms',
-        password:'Gs8V4aYG_2b!',
+        password:'#1Panda',
         database: 'firearms'
       }
 

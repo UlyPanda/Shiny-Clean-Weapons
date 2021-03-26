@@ -14,7 +14,7 @@ app.use(logger);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 // app.use(express.static("/build"))  
 
 app.get('/', (req, res) => {
