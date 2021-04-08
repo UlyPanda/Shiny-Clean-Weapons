@@ -3,9 +3,9 @@ const usersController = require('../controllers/users')
 const { authenticate } = require('../middleware/index')
 const router = express.Router()
 
-router.get('/', usersController.getAllUsers)
+router.get('/', authenticate, usersController.getAllUsers)
 
-router.get('/:username', usersController.getUserByUsername)
+router.get('/:username', authenticate, usersController.getUserByUsername)
 
 router.post('/signup/:username', usersController.createUser)
 
