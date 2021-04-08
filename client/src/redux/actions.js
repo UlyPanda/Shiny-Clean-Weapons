@@ -1,5 +1,8 @@
 import cookie from 'cookie';
 
+const cookies = cookie.parse(document.cookie);
+const headerToken = cookies["token"];
+
 export const signUp = (user) => {
     return (dispatch) => {
       fetch('/auth/signup', {
@@ -11,6 +14,7 @@ export const signUp = (user) => {
       })
       .then(response => response.json())
       .then(data => {
+          console.log(data);
         const action = {
           type: "SIGN_UP",
           value: data
@@ -42,7 +46,11 @@ export const getAllWeapons = () => {
 
 export const getSingleWeapon = () => {
     return (dispatch) => {
-        fetch('/breakdown')
+        fetch('/breakdown', {
+            headers: {
+                'authorization': 'Bearer ' + headerToken
+            }
+        })
         .then(response => response.json())
         .then(data => {
             const action = {
@@ -57,37 +65,14 @@ export const getSingleWeapon = () => {
     }
 }
 
-const getToken = () => {
-    const cookies = cookie.parse(document.cookie)
-    return cookies['token']
-};
-
-export const logIn = (user) => {
-    return (dispatch) => {
-        fetch('/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': getToken()
-            },
-            body: JSON.stringify(user),
-        })
-        .then(response => console.log(response.json()))
-        .then(data => {
-            const action = {
-                type: 'LOG_IN',
-                value: data
-            }
-            dispatch(action)
-        })
-        .catch((error) => {
-            console.log('Error:', error)
-        });
-    }
+export const logIn = () => {
+    return {
+        type: "LOG_IN"
+    };
 };
 
 export const logOut = () => {
     return {
          type: 'LOG_OUT'
-    }
+    };
 };

@@ -1,6 +1,6 @@
 import { TextField, Button, Container } from '@material-ui/core';
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 
 const Login = (props) => {
@@ -20,8 +20,25 @@ const Login = (props) => {
     const login = (e) => {
       e.preventDefault();
       const user = {username, password};
-      props.logIn(user);
-      history.push("/weapons");
+
+      fetch('/auth/login', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.authenticated) {
+          const token = data.token;
+          document.cookie = `token=${token}`
+          props.logIn();
+          history.push("/weapons");
+        }
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      });
     }
 
     return(
