@@ -22,8 +22,8 @@ export const signUp = (user) => {
         dispatch(action)
       })
       .catch((error) => {
-        console.log('Error:', error)
-      })
+        console.log('Error:', error);
+      });
     }
   };
 

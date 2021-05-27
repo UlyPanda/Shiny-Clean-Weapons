@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const weaponsRouter = require('./routes/weapons');
@@ -9,12 +8,12 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 4001;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(logger);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/weapons', weaponsRouter);
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded());
 // app.use(express.static("/build"))  
 
 app.get('/', (req, res) => {

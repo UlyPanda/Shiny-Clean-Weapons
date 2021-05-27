@@ -22,6 +22,7 @@ const Login = (props) => {
       const user = {username, password};
 
       fetch('/auth/login', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
